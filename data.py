@@ -24,7 +24,7 @@ for row in rows:
 
 country_data_df = pd.DataFrame(country_data, columns=column_header)
 ## Need to clean data frame
-
+country_data_df.columns['Population (2020)'].map(lambda x: 1)
 
 ## Pull Covid Data
 
