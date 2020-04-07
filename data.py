@@ -31,7 +31,8 @@ country_data_df['Net Change'] = country_data_df['Net Change'].map(lambda x: int(
 
 country_data_df['Yearly Change'] = country_data_df['Yearly Change'].map(lambda x: float(x.replace('%', '')))
 
-country_data_df[['Urban Pop %', 'World Share']].applymap(lambda x: x.replace(['%','N.A.'], np.nan))
+country_data_df[['Urban Pop %', 'World Share']] = country_data_df[['Urban Pop %', 'World Share']].applymap(lambda x: x.replace('%', ''))
+country_data_df[['Urban Pop %', 'World Share']] = country_data_df[['Urban Pop %', 'World Share']].applymap(lambda x: x.replace('N.A.', ''))
 
 ## Pull Covid Data
 
